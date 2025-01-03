@@ -9,13 +9,13 @@
 <body>
     <div class="container">
         <div class="input">
-            <label for="binary">Enter Binary Data</label>
-            <input type="number" id="binary">
+            <label for="binary">Enter Binary Data (up to 8 digits):</label>
+            <input type="text" id="binary" maxlength="8" pattern="[01]*" title="Please enter only 0s and 1s">
         </div>
         <div class="">
-            <input type="button" value="Convert" id="result">
+            <input type="button" value="Convert to Decimal" id="result">
         </div>
-        <p class="output"></p>
+        <p id="output" class="output"></p>
     </div>
     <script src="index.js"></script>
 </body>
