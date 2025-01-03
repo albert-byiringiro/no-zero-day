@@ -1,6 +1,7 @@
 const input = document.querySelector('#binary');
 const output = document.querySelector('#output');
 const calculate = document.querySelector('#result');
+const reset = document.querySelector("#reset")
 
 function validateInputBinaryNumbers(inputValue) {
     const splitValue = inputValue.split("");
@@ -20,3 +21,7 @@ calculate.addEventListener('click', () => {
     const decimalValue = parseInt(inputValue, 2);
     output.textContent = `Decimal Value: ${decimalValue}`;
 });
+
+reset.addEventListener('click', () => {
+    input.value = ""
+})
