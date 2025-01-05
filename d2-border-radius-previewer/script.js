@@ -36,3 +36,13 @@ async function copyCSS() {
         console.error('Failed to copy:', error);
     }
 }
+
+function resetValues() {
+    inputs.forEach(input => {
+        input.value = 0
+        const { corner, axis } = input.dataset
+        state[corner][axis] = 0
+    })
+
+    updateDisplay()
+}
