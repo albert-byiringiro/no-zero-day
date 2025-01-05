@@ -20,3 +20,11 @@ function updateDisplay {
     previewBox.style.borderRadius = borderRadiusValue
     codeDisplay.textContent = `border-radius: ${borderRadiusValue}`
 }
+
+function handleInputChange(e) {
+    const { corner, axis } = e.target.dataset
+    const value = parseInt(e.target.value) || 0
+
+    state[corner][axis] = value
+    updateDisplay()
+}
