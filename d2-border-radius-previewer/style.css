@@ -14,7 +14,38 @@ body > h1 {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
+.controller {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 10px;
+}
+
+.border-radius-input {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.previewer {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.prev-box {
+    width: 30%;
+    padding: 100px;
+    border: 2px solid green;
+}
+
+/* .code-snippet {
+    padding: 100px;
+    width: 70%;
+    border: 2px dashed blue;
+} */
