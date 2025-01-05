@@ -53,3 +53,5 @@ inputs.forEach(input => {
 
 copyBtn.addEventListener('click', copyCSS)
 resetBtn.addEventListener('click', resetValues)
+
+updateDisplay()
