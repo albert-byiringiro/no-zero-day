@@ -12,14 +12,44 @@
 
         <div class="main-content">
             <div class="controls">
-                <input type="text" name="border-radius-input-top-left" id="top-left" class="border-radius-input" placeholder="border radius top left">
-                <input type="text" name="border-radius-input-top-right" id="top-right" class="border-radius-input" placeholder="border radius top right">
-                <input type="text" name="border-radius-input-bottom-left" id="bottom-left" class="border-radius-input" placeholder="border radius bottom left">
-                <input type="text" name="border-radius-input-bottom-right" id="bottom-right" class="border-radius-input" placeholder="border radius bottom right">
+                <div class="input-group">
+                    <label>Top Left</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="topLeft" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="topLeft" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Top Right</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="topRight" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="topRight" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Bottom Left</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="bottomLeft" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="bottomLeft" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Bottom Right</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="bottomRight" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="bottomRight" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="resetBtn">Reset</button>
+                    <button id="copyBtn">Copy CSS</button>
+                </div>
             </div>
+
             <div class="preview-section">
-                <div class="prev-box"></div>
-                <div class="code-snippet"></div>
+                <div class="preview-box"></div>
+                <div class="css-code"></div>
             </div>
         </div>
         
