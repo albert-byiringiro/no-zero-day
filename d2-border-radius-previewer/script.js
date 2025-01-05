@@ -46,3 +46,10 @@ function resetValues() {
 
     updateDisplay()
 }
+
+inputs.forEach(input => {
+    input.addEventListener('input', handleInputChange)
+})
+
+copyBtn.addEventListener('click', copyCSS)
+resetBtn.addEventListener('click', resetValues)
