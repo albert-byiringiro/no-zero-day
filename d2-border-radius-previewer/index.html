@@ -4,9 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Border Radius Previewer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <script src="index.js"></script>
+    <div class="container">
+        <h1 class="">Border-radius-input Previewer</h1>
+
+        <div class="main-content">
+            <div class="controls">
+                <div class="input-group">
+                    <label>Top Left</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="topLeft" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="topLeft" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Top Right</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="topRight" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="topRight" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Bottom Left</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="bottomLeft" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="bottomLeft" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Bottom Right</label>
+                    <div class="input-pair">
+                        <input type="number" class="radius-input" data-corner="bottomRight" data-axis="x" min="0" max="100" placeholder="x">
+                        <input type="number" class="radius-input" data-corner="bottomRight" data-axis="y" min="0" max="100" placeholder="y">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="resetBtn">Reset</button>
+                    <button id="copyBtn">Copy CSS</button>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <div class="preview-box"></div>
+                <div class="css-code"></div>
+            </div>
+        </div>
+
+        <div class="toast" id="toast">Copied to clipboard!</div>
+        
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
