@@ -10,6 +10,7 @@ const codeDisplay = document.querySelector('.css-code')
 const inputs = document.querySelectorAll('.radius-input')
 const copyBtn = document.getElementById('copyBtn')
 const resetBtn = document.getElementById('resetBtn')
+const toast = document.getElementById('toast')
 
 function getBorderRadiusValue() {
     return `${state.topLeft.x}px ${state.topRight.x}px ${state.bottomRight.x}px ${state.bottomLeft.x}px  / ${state.topLeft.y}px ${state.topRight.y}px ${state.bottomRight.y}px ${state.bottomLeft.y}px`
@@ -32,9 +33,17 @@ function handleInputChange(e) {
 async function copyCSS() {
     try {
         await navigator.clipboard.writeText(codeDisplay.textContent)
+        showToast()
     } catch (error) {
         console.error('Failed to copy:', error);
     }
+}
+
+function showToast() {
+    toast.style.display = 'block'
+    setTimeout(() => {
+        toast.style.display = 'none'
+    }, 2000);
 }
 
 function resetValues() {
