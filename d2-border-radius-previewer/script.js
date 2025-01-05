@@ -15,7 +15,7 @@ function getBorderRadiusValue() {
     return `${state.topLeft.x}px ${state.topRight.x}px ${state.bottomRight.x}px ${state.bottomLeft.x}px  / ${state.topLeft.y}px ${state.topRight.y}px ${state.bottomRight.y}px ${state.bottomLeft.y}px`
 }
 
-function updateDisplay {
+function updateDisplay() {
     const borderRadiusValue = getBorderRadiusValue()
     previewBox.style.borderRadius = borderRadiusValue
     codeDisplay.textContent = `border-radius: ${borderRadiusValue}`
