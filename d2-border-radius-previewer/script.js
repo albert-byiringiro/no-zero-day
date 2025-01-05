@@ -28,3 +28,11 @@ function handleInputChange(e) {
     state[corner][axis] = value
     updateDisplay()
 }
+
+async function copyCSS() {
+    try {
+        await navigator.clipboard.writeText(codeDisplay.textContent)
+    } catch (error) {
+        console.error('Failed to copy:', error);
+    }
+}
