@@ -38,3 +38,20 @@ h1 {
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.input-pair {
+    display: flex;
+    gap: 0.5rem;
+}
