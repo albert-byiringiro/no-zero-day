@@ -18,7 +18,7 @@ body {
     box-shadow: 5px 5px #f1f1f1;
 }
 
-.display {
+#display {
     background-color: lightgray;
     height: 30px;
     width: 100%;
