@@ -4,10 +4,11 @@ const clear = document.querySelector(".cal-clear")
 const operations = document.querySelectorAll(".cal-operation")
 
 // Handler variables
-let firstCache
-let secondCache
-let summation
-let activeOperation
+const handlerVariables = {
+    firstCache: "",
+    secondCache: "",
+    activeOperation: ""
+}
 
 // Helper functions
 const clearAll = () => {
@@ -15,63 +16,63 @@ const clearAll = () => {
 }
 
 const addOperation = () => {
-    firstCache = parseFloat(display.value)
-    activeOperation = "+"
+    handlerVariables.firstCache = parseFloat(display.value)
+    handlerVariables.activeOperation = "+"
     clearAll()
 }
 
 const substractOperation = () => {
-    firstCache = parseFloat(display.value)
-    activeOperation = "-"
+    handlerVariables.firstCache = parseFloat(display.value)
+    handlerVariables.activeOperation = "-"
     clearAll()
 }
 
 const multiplicationOperation = () => {
-    firstCache = parseFloat(display.value)
-    activeOperation = "x"
+    handlerVariables.firstCache = parseFloat(display.value)
+    handlerVariables.activeOperation = "x"
     clearAll()
 }
 
 const divisionOperation = () => {
-    firstCache = parseFloat(display.value)
-    activeOperation = "/"
+    handlerVariables.firstCache = parseFloat(display.value)
+    handlerVariables.activeOperation = "/"
     clearAll()
 }
 
 const percentageOperation = () => {
-    firstCache = parseFloat(display.value)
+    handlerVariables.firstCache = parseFloat(display.value)
     clearAll()
     display.value = firstCache / 100
 }
 
 const sumOperation = () => {
-    if (!firstCache || !display.value) {
+    if (!handlerVariables.firstCache || !display.value) {
         console.log("Operation not allowed")
         return
     }
 
-    secondCache = parseFloat(display.value)
+    handlerVariables.secondCache = parseFloat(display.value)
 
-    if (activeOperation === "+") {
-        display.value = firstCache + secondCache
+    if (handlerVariables.activeOperation === "+") {
+        display.value = handlerVariables.firstCache + handlerVariables.secondCache
 
-        firstCache = display.value
-        secondCache = ""
-    } else if (activeOperation === "-") {
-        display.value = firstCache - secondCache
+        handlerVariables.firstCache = display.value
+        handlerVariables.secondCache = ""
+    } else if (handlerVariables.activeOperation === "-") {
+        display.value = handlerVariables.firstCache - handlerVariables.secondCache
 
-        firstCache = display.value
-        secondCache = ""
-    } else if (activeOperation === "x") {
-        display.value = firstCache * secondCache
+        handlerVariables.firstCache = display.value
+        handlerVariables.secondCache = ""
+    } else if (handlerVariables.activeOperation === "x") {
+        display.value = handlerVariables.firstCache * handlerVariables.secondCache
 
-        firstCache = display.value
-        secondCache = ""
-    } else if (activeOperation === '/') {
-        display.value = firstCache / secondCache
+        handlerVariables.firstCache = display.value
+        handlerVariables.secondCache = ""
+    } else if (handlerVariables.activeOperation === '/') {
+        display.value = handlerVariables.firstCache / handlerVariables.secondCache
 
-        firstCache = display.value
-        secondCache = ""
+        handlerVariables.firstCache = display.value
+        handlerVariables.secondCache = ""
     }
 }
 
