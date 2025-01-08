@@ -2,6 +2,7 @@ const display = document.getElementById('display')
 const digits = document.querySelectorAll(".cal-digits")
 const clear = document.querySelector(".cal-clear")
 const operations = document.querySelectorAll(".cal-operation")
+const clearAllBtn = document.querySelector('.cal-clear-all')
 
 // Handler variables
 const handlerVariables = {
@@ -11,37 +12,55 @@ const handlerVariables = {
 }
 
 // Helper functions
-const clearAll = () => {
+const clearDisplayValue = () => {
     display.value = ""
+}
+
+const clearAllOp = () => {
+    handlerVariables.activeOperation = ""
+    handlerVariables.firstCache = ""
+    handlerVariables.secondCache = ""
+    display.value = 0
+}
+
+const clearLatestOp = () => {
+    if (handlerVariables.activeOperation) {
+        handlerVariables.activeOperation = ""
+        display.value = handlerVariables.firstCache
+        return
+    }
+
+    display.value = 0
+    handlerVariables.firstCache = ""
 }
 
 const addOperation = () => {
     handlerVariables.firstCache = parseFloat(display.value)
     handlerVariables.activeOperation = "+"
-    clearAll()
+    clearDisplayValue()
 }
 
 const substractOperation = () => {
     handlerVariables.firstCache = parseFloat(display.value)
     handlerVariables.activeOperation = "-"
-    clearAll()
+    clearDisplayValue()
 }
 
 const multiplicationOperation = () => {
     handlerVariables.firstCache = parseFloat(display.value)
     handlerVariables.activeOperation = "x"
-    clearAll()
+    clearDisplayValue()
 }
 
 const divisionOperation = () => {
     handlerVariables.firstCache = parseFloat(display.value)
     handlerVariables.activeOperation = "/"
-    clearAll()
+    clearDisplayValue()
 }
 
 const percentageOperation = () => {
     handlerVariables.firstCache = parseFloat(display.value)
-    clearAll()
+    clearDisplayValue()
     display.value = firstCache / 100
 }
 
@@ -58,21 +77,25 @@ const sumOperation = () => {
 
         handlerVariables.firstCache = display.value
         handlerVariables.secondCache = ""
+        handlerVariables.activeOperation = ""
     } else if (handlerVariables.activeOperation === "-") {
         display.value = handlerVariables.firstCache - handlerVariables.secondCache
 
         handlerVariables.firstCache = display.value
         handlerVariables.secondCache = ""
+        handlerVariables.activeOperation = ""
     } else if (handlerVariables.activeOperation === "x") {
         display.value = handlerVariables.firstCache * handlerVariables.secondCache
 
         handlerVariables.firstCache = display.value
         handlerVariables.secondCache = ""
+        handlerVariables.activeOperation = ""
     } else if (handlerVariables.activeOperation === '/') {
         display.value = handlerVariables.firstCache / handlerVariables.secondCache
 
         handlerVariables.firstCache = display.value
         handlerVariables.secondCache = ""
+        handlerVariables.activeOperation = ""
     }
 }
 
@@ -83,11 +106,13 @@ digits.forEach(digit => {
             return
         }
 
-        display.value = display.value + digit.value
+        display.value = display.value === "0" ? "" + digit.value : display.value + digit.value
     })
 })
 
-clear.addEventListener('click', clearAll)
+clear.addEventListener('click', clearLatestOp)
+
+clearAllBtn.addEventListener('click', clearAllOp)
 
 operations.forEach(operation => {
     operation.addEventListener('click', () => {
