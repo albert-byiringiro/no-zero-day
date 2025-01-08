@@ -12,6 +12,9 @@ let activeOperation
 // Helper functions
 const clearAll = () => {
     display.value = ""
+    firstCache = ""
+    secondCache = ""
+    activeOperation = ""
 }
 
 const addOperation = () => {
