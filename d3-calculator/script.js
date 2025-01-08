@@ -8,13 +8,15 @@ const clearAllBtn = document.querySelector('.cal-clear-all')
 const handlerVariables = {
     firstCache: "",
     secondCache: "",
-    activeOperation: ""
+    activeOperation: "",
+    summation: ""
 }
 
 // Helper functions
 const clearDisplayValue = () => {
     display.value = ""
 }
+display.value = handlerVariables.summation
 
 const clearAllOp = () => {
     handlerVariables.activeOperation = ""
@@ -23,10 +25,11 @@ const clearAllOp = () => {
     display.value = 0
 }
 
+display.value = handlerVariables.summation
 const clearLatestOp = () => {
     if (handlerVariables.activeOperation) {
         handlerVariables.activeOperation = ""
-        display.value = handlerVariables.firstCache
+        handlerVariables.summation = handlerVariables.firstCache
         return
     }
 
@@ -68,6 +71,19 @@ const togglePositiveNegative = () => {
     return display.value.includes('-') ? display.value = display.value.slice(1) : display.value = "-" + display.value
 }
 
+const displaySummation = (sum) => {
+    let summationLength = String(sum).length
+    if (summationLength >= 8) {
+        display.value = "ERR"
+        return
+    }
+
+    display.value = sum
+    handlerVariables.firstCache = sum
+    handlerVariables.secondCache = ""
+    handlerVariables.activeOperation = ""
+}
+
 const sumOperation = () => {
     if (!handlerVariables.firstCache || !display.value) {
         console.log("Operation not allowed")
@@ -77,29 +93,25 @@ const sumOperation = () => {
     handlerVariables.secondCache = parseFloat(display.value)
 
     if (handlerVariables.activeOperation === "+") {
-        display.value = handlerVariables.firstCache + handlerVariables.secondCache
+        handlerVariables.summation = handlerVariables.firstCache + handlerVariables.secondCache
 
-        handlerVariables.firstCache = display.value
-        handlerVariables.secondCache = ""
-        handlerVariables.activeOperation = ""
+        displaySummation(handlerVariables.summation)
+
     } else if (handlerVariables.activeOperation === "-") {
-        display.value = handlerVariables.firstCache - handlerVariables.secondCache
+        handlerVariables.summation = handlerVariables.firstCache - handlerVariables.secondCache
 
-        handlerVariables.firstCache = display.value
-        handlerVariables.secondCache = ""
-        handlerVariables.activeOperation = ""
+        displaySummation(handlerVariables.summation)
+
     } else if (handlerVariables.activeOperation === "x") {
-        display.value = handlerVariables.firstCache * handlerVariables.secondCache
+        handlerVariables.summation = handlerVariables.firstCache * handlerVariables.secondCache
 
-        handlerVariables.firstCache = display.value
-        handlerVariables.secondCache = ""
-        handlerVariables.activeOperation = ""
+        displaySummation(handlerVariables.summation)
+
     } else if (handlerVariables.activeOperation === '/') {
-        display.value = handlerVariables.firstCache / handlerVariables.secondCache
+        handlerVariables.summation = handlerVariables.firstCache / handlerVariables.secondCache
 
-        handlerVariables.firstCache = display.value
-        handlerVariables.secondCache = ""
-        handlerVariables.activeOperation = ""
+        displaySummation(handlerVariables.summation)
+
     }
 }
 
