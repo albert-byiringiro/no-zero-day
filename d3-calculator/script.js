@@ -64,6 +64,10 @@ const percentageOperation = () => {
     display.value = firstCache / 100
 }
 
+const togglePositiveNegative = () => {
+    return display.value.includes('-') ? display.value = display.value.slice(1) : display.value = "-" + display.value
+}
+
 const sumOperation = () => {
     if (!handlerVariables.firstCache || !display.value) {
         console.log("Operation not allowed")
@@ -103,6 +107,11 @@ const sumOperation = () => {
 digits.forEach(digit => {
     digit.addEventListener("click", () => {
         if (display.value.length >= 8) {
+            return
+        }
+
+        if (digit.value === "+/-") {
+            togglePositiveNegative()
             return
         }
 
