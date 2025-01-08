@@ -12,9 +12,6 @@ let activeOperation
 // Helper functions
 const clearAll = () => {
     display.value = ""
-    firstCache = ""
-    secondCache = ""
-    activeOperation = ""
 }
 
 const addOperation = () => {
@@ -42,9 +39,7 @@ const sumOperation = () => {
 
         firstCache = display.value
         secondCache = ""
-    }
-
-    if (activeOperation === "-") {
+    } else if (activeOperation === "-") {
         display.value = firstCache - secondCache
 
         firstCache = display.value
