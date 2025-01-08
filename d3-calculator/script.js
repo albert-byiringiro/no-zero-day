@@ -64,7 +64,7 @@ const divisionOperation = () => {
 const percentageOperation = () => {
     handlerVariables.firstCache = parseFloat(display.value)
     clearDisplayValue()
-    display.value = firstCache / 100
+    display.value = handlerVariables.firstCache / 100
 }
 
 const togglePositiveNegative = () => {
