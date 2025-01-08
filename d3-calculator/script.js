@@ -75,7 +75,7 @@ const sumOperation = () => {
     }
 }
 
-// [TODO]: Display digits clicked
+// Event Listeners
 digits.forEach(digit => {
     digit.addEventListener("click", () => {
         if (display.value.length >= 8) {
@@ -86,10 +86,8 @@ digits.forEach(digit => {
     })
 })
 
-// [TODO]: clear displayed digits
 clear.addEventListener('click', clearAll)
 
-// [TODO]: Add operation for addition
 operations.forEach(operation => {
     operation.addEventListener('click', () => {
         if (operation.value === "+") {
