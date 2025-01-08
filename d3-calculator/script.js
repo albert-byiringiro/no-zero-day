@@ -15,27 +15,33 @@ const clearAll = () => {
 }
 
 const addOperation = () => {
-    firstCache = parseInt(display.value)
+    firstCache = parseFloat(display.value)
     activeOperation = "+"
     clearAll()
 }
 
 const substractOperation = () => {
-    firstCache = parseInt(display.value)
+    firstCache = parseFloat(display.value)
     activeOperation = "-"
     clearAll()
 }
 
 const multiplicationOperation = () => {
-    firstCache = parseInt(display.value)
+    firstCache = parseFloat(display.value)
     activeOperation = "x"
     clearAll()
 }
 
 const divisionOperation = () => {
-    firstCache = parseInt(display.value)
+    firstCache = parseFloat(display.value)
     activeOperation = "/"
     clearAll()
+}
+
+const percentageOperation = () => {
+    firstCache = parseFloat(display.value)
+    clearAll()
+    display.value = firstCache / 100
 }
 
 const sumOperation = () => {
@@ -44,7 +50,7 @@ const sumOperation = () => {
         return
     }
 
-    secondCache = parseInt(display.value)
+    secondCache = parseFloat(display.value)
 
     if (activeOperation === "+") {
         display.value = firstCache + secondCache
@@ -96,6 +102,8 @@ operations.forEach(operation => {
             multiplicationOperation()
         } else if (operation.value === "/") {
             divisionOperation()
+        } else if (operation.value === "%") {
+            percentageOperation()
         }
     })
 })
