@@ -1,7 +1,8 @@
 const display = document.getElementById('display')
 const digits = document.querySelectorAll(".cal-digits")
+const clear = document.querySelector(".cal-clear")
 
-// Display digits clicked
+// [TODO]: Display digits clicked
 digits.forEach(digit => {
     digit.addEventListener("click", () => {
         if (display.value.length >= 8) {
@@ -11,5 +12,9 @@ digits.forEach(digit => {
         display.value = display.value + digit.value
     })
 })
-// clear displayed digits
-// calculation operations
+
+// [TODO]: clear displayed digits
+clear.addEventListener('click', () => {
+    display.value = ""
+})
+// [TODO]: Add operation for addition
