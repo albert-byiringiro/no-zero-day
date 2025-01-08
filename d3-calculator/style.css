@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.container {
+    margin: 1rem;
+    padding: 1rem;
+    width: 70%;
+    height: 400px;
+    box-shadow: 5px 5px #f1f1f1;
+}
+
+#display {
+    background-color: lightgray;
+    height: 30px;
+    width: 100%;
+    outline: 0;
+    margin-bottom: 10px;
+    text-align: right;
+    outline: none;
+    border: none;
+    box-shadow: 10px rgba(0, 0, 0, 0.5);
+}
+
+.cal-keys {
+    display: grid;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rows {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+input[type="button"] {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    text-align: center;
+    cursor: pointer;
+}
