@@ -76,8 +76,8 @@ const displaySummation = (sum) => {
         return
     }
 
-    display.value = sum
-    handlerVariables.firstCache = sum
+    display.value = parseFloat(sum)
+    handlerVariables.firstCache = parseFloat(sum)
     handlerVariables.secondCache = ""
     handlerVariables.activeOperation = ""
 }
