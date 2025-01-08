@@ -26,6 +26,12 @@ const substractOperation = () => {
     clearAll()
 }
 
+const multiplicationOperation = () => {
+    firstCache = parseInt(display.value)
+    activeOperation = "x"
+    clearAll()
+}
+
 const sumOperation = () => {
     if (!firstCache || !display.value) {
         console.log("Operation not allowed")
@@ -41,6 +47,11 @@ const sumOperation = () => {
         secondCache = ""
     } else if (activeOperation === "-") {
         display.value = firstCache - secondCache
+
+        firstCache = display.value
+        secondCache = ""
+    } else if (activeOperation === "x") {
+        display.value = firstCache * secondCache
 
         firstCache = display.value
         secondCache = ""
@@ -70,6 +81,8 @@ operations.forEach(operation => {
             sumOperation()
         } else if (operation.value === "-") {
             substractOperation()
+        } else if (operation.value === "x") {
+            multiplicationOperation()
         }
     })
 })
