@@ -24,7 +24,6 @@ const clearAllOp = () => {
     display.value = 0
 }
 
-display.value = handlerVariables.summation
 const clearLatestOp = () => {
     if (handlerVariables.activeOperation) {
         handlerVariables.activeOperation = ""
