@@ -16,7 +16,6 @@ const handlerVariables = {
 const clearDisplayValue = () => {
     display.value = ""
 }
-display.value = handlerVariables.summation
 
 const clearAllOp = () => {
     handlerVariables.activeOperation = ""
