@@ -138,4 +138,21 @@ body {
         grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
+
+    .container .input {
+        grid-area: input;
+    }
+
+    .container .spreadsheet {
+        grid-area: spreadsheet;
+    }
+
+    .container .chart {
+        grid-area: chart;
+        align-self: flex-start;
+    }
+
+    .container > * + * {
+        margin-top: 0;
+    }
 }
