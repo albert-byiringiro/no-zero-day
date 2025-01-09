@@ -22,6 +22,10 @@ body {
     padding: 2rem;
 }
 
+.rows {
+    display: flex;
+}
+
 #display {
     background-color: lightgray;
     height: 30px;
@@ -32,12 +36,6 @@ body {
     outline: none;
     border: none;
     box-shadow: 10px rgba(0, 0, 0, 0.5);
-}
-
-.rows {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
 }
 
 input[type="button"] {
