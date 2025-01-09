@@ -72,3 +72,12 @@ body {
     border: 2px solid hsl(210, 90%, 85%);
     outline-color: hsl(210, 90%, 85%);
 }
+
+.container .input .controls {
+    display: flex;
+    align-items: center;
+}
+
+.container .input .controls > * + * {
+    margin-left: 0.75rem;
+}
