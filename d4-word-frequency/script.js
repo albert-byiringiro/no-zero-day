@@ -25,7 +25,7 @@ const generateTable = (occurences) => {
     for (const [word, frequency] of occurences) {
         const row = document.createElement('tr')
 
-        const tdWord = document.createElement('th')
+        const tdWord = document.createElement('td')
         tdWord.scope = "row"
         tdWord.textContent = word
 
