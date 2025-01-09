@@ -81,3 +81,14 @@ body {
 .container .input .controls > * + * {
     margin-left: 0.75rem;
 }
+
+.container .input .controls .btn {
+    padding: 0.25rem 1rem;
+    color: hsl(0, 0%, 100%);
+    background: hsl(210, 90%, 55%);
+    border: 2px solid hsl(210, 90%, 55%);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline-color: hsl(210, 90%, 60%);
+}
