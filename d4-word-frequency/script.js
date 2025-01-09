@@ -65,6 +65,7 @@ const countWords = () => {
     }
 
     wordspace.value = ""
+    statsTable.innerHTML = ""
 
     generateTable(sortedOcurrencies)
 }
