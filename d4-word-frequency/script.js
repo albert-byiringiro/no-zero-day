@@ -36,7 +36,9 @@ countBtn.addEventListener('click', () => {
 
     const tbody = document.createElement('tbody')
 
-    for (const [word, frequency] of Object.entries(occurences)) {
+    const sortedOcurrencies = Object.entries(occurences).sort((a, b) => b[1] - a[1])
+
+    for (const [word, frequency] of sortedOcurrencies) {
         const row = document.createElement('tr')
 
         const tdWord = document.createElement('th')
