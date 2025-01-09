@@ -50,8 +50,12 @@ body {
     transform: rotate(-20deg);
   }
 
-  .container .chart .icon {
+.container .chart .icon {
     bottom: 0;
     right: 0;
     transform: rotate(10deg);
-  }
+}
+
+.container .input > * + * {
+    margin-top: 1rem;
+}
