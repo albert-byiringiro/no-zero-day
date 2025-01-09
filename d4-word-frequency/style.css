@@ -37,3 +37,9 @@ body {
   position: absolute;
   filter: drop-shadow(0 1px 5px hsla(210, 90%, 30%, 0.2));
 }
+
+.container .input .icon {
+    top: 0;
+    right: 0;
+    transform: rotate(20deg);
+}
