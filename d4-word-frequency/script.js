@@ -34,13 +34,28 @@ countBtn.addEventListener('click', () => {
 
     thead.appendChild(headerRow)
 
-    // for (const [key, value] of Object.entries(occurences)) {
-    //     const li = document.createElement('li')
-    //     li.textContent = `${key} - ${value}`
-    //     fragment.appendChild(li)
-    // }
+    const tbody = document.createElement('tbody')
 
-    statsTable.appendChild(thead)
+    for (const [word, frequency] of Object.entries(occurences)) {
+        const row = document.createElement('tr')
+
+        const tdWord = document.createElement('th')
+        tdWord.scope = "row"
+        tdWord.textContent = word
+
+        const tdFrequency = document.createElement('td')
+        tdFrequency.textContent = frequency
+
+        row.appendChild(tdWord)
+        row.appendChild(tdFrequency)
+
+        tbody.appendChild(row)
+    }
+
+    fragment.appendChild(thead)
+    fragment.appendChild(tbody)
+
+    statsTable.appendChild(fragment)
 })
 // [TODO] display the words and their count occurences
 // [TODO] display the words in the graph
