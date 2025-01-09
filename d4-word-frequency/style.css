@@ -92,3 +92,8 @@ body {
     font-family: inherit;
     outline-color: hsl(210, 90%, 60%);
 }
+
+.container .input .controls .btn-secondary {
+    color: hsl(210, 90%, 55%);
+    background: hsl(0, 0%, 100%);
+}
