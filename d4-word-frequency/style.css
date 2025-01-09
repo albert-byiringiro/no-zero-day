@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-size: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 95vw;
+    background-color: gray;
+}
+
+.container > * + * {
+    margin-top: 1rem;
+}
