@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Frequency</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <main class="input">
+            <svg class="icon" viewBox="0 0 100 60" width="75" height="45">
+                <use href="#keyboard"></use>
+              </svg>
+            <textarea name="wordspace" id="wordspace" placeholder="Enter some words ..."></textarea>
+            <div class="controls">
+                <input type="button" value="Count Words" class="btn btn-primary">
+                <input type="button" value="Load Sample" class="btn btn-secondary">
+            </div>
+        </main>
+        <section class="spreadsheet">
+            <svg class="icon" viewBox="0 0 90 100" width="45" height="50">
+                <use href="#table"></use>
+            </svg>
+            <table class="word-stats-table"></table>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
