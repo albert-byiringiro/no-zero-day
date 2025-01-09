@@ -5,10 +5,11 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
     min-height: 100vh;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><g fill="none" stroke-width="1" stroke="hsl(210, 90%, 30%)"><path d="M 0 30 Q 40 60 20 100"></path><path d="M 20 0 Q 40 60 100 30"></path></g></svg>'),
+    hsl(210, 90%, 45%);
     background-size: 50px;
+    font-family: 'Mukta', sans-serif;
 }
 
 .container {
