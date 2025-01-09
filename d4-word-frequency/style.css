@@ -129,3 +129,13 @@ body {
 .container .spreadsheet table tr:nth-of-type(odd) td {
     background-color: hsl(210, 90%, 96%);
 }
+
+@media (min-width: 700px) {
+    .container {
+        display: grid;
+        max-width: 750px;
+        grid-template-areas: 'input input' 'spreadsheet chart';
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
