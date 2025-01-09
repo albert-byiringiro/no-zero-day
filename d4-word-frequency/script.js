@@ -47,7 +47,6 @@ const generateTable = (occurences) => {
 const countWords = () => {
     const words = wordspace.value
     const wordsArr = words.toLowerCase().split(/[\s]/g).filter(word => word !== "")
-    wordspace.value = ""
 
     let occurences = {};
     for (let i = 0; i < wordsArr.length; i++) {
@@ -59,6 +58,13 @@ const countWords = () => {
     }
 
     const sortedOcurrencies = Object.entries(occurences).sort((a, b) => b[1] - a[1])
+
+    if (sortedOcurrencies.length <= 2) {
+        console.log('We should have words that are more than 2')
+        return
+    }
+
+    wordspace.value = ""
 
     generateTable(sortedOcurrencies)
 }
