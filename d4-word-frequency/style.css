@@ -49,3 +49,9 @@ body {
     left: 0;
     transform: rotate(-20deg);
   }
+
+  .container .chart .icon {
+    bottom: 0;
+    right: 0;
+    transform: rotate(10deg);
+  }
